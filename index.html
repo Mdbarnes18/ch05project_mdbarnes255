@@ -25,12 +25,12 @@
     <main>
         <h2>Contact Form</h2>
 
-        <form id="contact-form">
+        <form id="contact-form" autocomplete="on">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="required">
+            <input type="text" id="name" name="name" class="required" autocomplete="name">
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="required">
+            <input type="email" id="email" name="email" class="required" autocomplete="email">
 
             <label for="subject">Subject:</label>
             <select id="subject" name="subject" class="required">
@@ -43,7 +43,8 @@
             <input type="button" id="submit-button" value="Submit">
         </form>
 
-        <span id="missing-count"></span>
+        <span id="missing-count" aria-live="polite"></span>
+        <span id="success-message" aria-live="polite"></span>
     </main>
 
     <footer>

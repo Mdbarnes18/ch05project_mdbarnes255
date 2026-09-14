@@ -81,6 +81,12 @@ select:focus {
     font-weight: bold;
 }
 
+#success-message {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
 footer {
     text-align: center;
     padding: 20px;

@@ -25,8 +25,9 @@ function checkMissing() {
 // Checks whether the email address contains at least 8 characters.
 function validateEmail() {
     const email = document.getElementById("email");
+    const emailLength = email.value.trim().length;
 
-    if (email.value.trim().length < 8) {
+    if (emailLength < 8) {
         email.classList.add("invalid-email");
         return false;
     }
@@ -39,12 +40,15 @@ function validateEmail() {
 function validateForm() {
     const missingFieldsValid = checkMissing();
     const emailValid = validateEmail();
+    const successMessage = document.getElementById("success-message");
 
     if (!missingFieldsValid || !emailValid) {
+        successMessage.textContent = "";
         alert("Please correct the highlighted fields before submitting.");
         return false;
     }
 
+    successMessage.textContent = "Form submitted successfully!";
     return true;
 }
 
