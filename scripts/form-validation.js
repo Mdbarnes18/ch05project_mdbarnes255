@@ -1,5 +1,6 @@
 // Michael Barnes - September 14, 2026
 
+// Checks the required fields and counts any fields that are empty.
 function checkMissing() {
     const requiredFields = document.querySelectorAll(".required");
     let missingFields = 0;
@@ -21,6 +22,7 @@ function checkMissing() {
     return true;
 }
 
+// Checks whether the email address contains at least 8 characters.
 function validateEmail() {
     const email = document.getElementById("email");
 
@@ -33,10 +35,21 @@ function validateEmail() {
     return true;
 }
 
+// Runs all validation functions when the Submit button is clicked.
+function validateForm() {
+    const missingFieldsValid = checkMissing();
+    const emailValid = validateEmail();
+
+    if (!missingFieldsValid || !emailValid) {
+        alert("Please correct the highlighted fields before submitting.");
+        return false;
+    }
+
+    return true;
+}
+
 const submitButton = document.getElementById("submit-button");
 
 submitButton.addEventListener("click", function() {
-    if (!checkMissing() || !validateEmail()) {
-        alert("Please correct the highlighted fields before submitting.");
-    }
+    validateForm();
 });
