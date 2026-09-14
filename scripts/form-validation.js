@@ -48,8 +48,11 @@ function validateForm() {
     return true;
 }
 
-const submitButton = document.getElementById("submit-button");
+// Waits until the webpage has finished loading before finding the button.
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById("submit-button");
 
-submitButton.addEventListener("click", function() {
-    validateForm();
+    submitButton.addEventListener("click", function() {
+        validateForm();
+    });
 });
