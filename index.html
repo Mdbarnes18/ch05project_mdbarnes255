@@ -23,7 +23,27 @@
     </nav>
 
     <main>
+        <h2>Contact Form</h2>
 
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="required">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="required">
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" class="required">
+                <option value="">Select a subject</option>
+                <option value="question">Question</option>
+                <option value="comment">Comment</option>
+                <option value="other">Other</option>
+            </select>
+
+            <input type="button" id="submit-button" value="Submit">
+        </form>
+
+        <span id="missing-count"></span>
     </main>
 
     <footer>
