@@ -20,3 +20,11 @@ function checkMissing() {
     missingCount.textContent = "";
     return true;
 }
+
+const submitButton = document.getElementById("submit-button");
+
+submitButton.addEventListener("click", function() {
+    if (!checkMissing()) {
+        alert("Please complete all required fields before submitting.");
+    }
+});
