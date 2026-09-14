@@ -21,10 +21,22 @@ function checkMissing() {
     return true;
 }
 
+function validateEmail() {
+    const email = document.getElementById("email");
+
+    if (email.value.trim().length < 8) {
+        email.classList.add("invalid-email");
+        return false;
+    }
+
+    email.classList.remove("invalid-email");
+    return true;
+}
+
 const submitButton = document.getElementById("submit-button");
 
 submitButton.addEventListener("click", function() {
-    if (!checkMissing()) {
-        alert("Please complete all required fields before submitting.");
+    if (!checkMissing() || !validateEmail()) {
+        alert("Please correct the highlighted fields before submitting.");
     }
 });

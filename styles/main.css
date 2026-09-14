@@ -3,3 +3,7 @@
 .required {
     border: 2px solid #e6b800;
 }
+
+.invalid-email {
+    border: 2px solid #cc0000;
+}
